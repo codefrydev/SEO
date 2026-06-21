@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Audit — Developer-friendly SEO Crawl & Audit</title>
+  <meta name="description" content="Self-hosted technical SEO for developers. Crawl, audit, integrate GSC/GA4, and fix with AI agents via 340 MCP tools. Open source. Your infrastructure, your data.">
+  <meta property="og:title" content="Site Audit — Open Source SEO Crawl & Audit">
+  <meta property="og:description" content="Self-hosted SEO audit platform built with Next.js, Python, and PostgreSQL.">
+  <meta property="og:url" content="https://codefrydev.in/SEO">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="codefrydev">
+  <meta property="og:image" content="https://raw.githubusercontent.com/codefrydev/WebsiteProfiling/master/docs/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Site Audit — Open Source SEO Crawl & Audit">
+  <meta name="twitter:description" content="Self-hosted SEO audit platform built with Next.js, Python, and PostgreSQL.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/codefrydev/WebsiteProfiling/master/docs/assets/social-preview.png">
+  <link rel="canonical" href="https://codefrydev.in/SEO">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://codefrydev.in/#website",
+        "url": "https://codefrydev.in/",
+        "name": "codefrydev"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://codefrydev.in/SEO#webpage",
+        "url": "https://codefrydev.in/SEO",
+        "name": "Site Audit — Developer-friendly SEO Crawl & Audit",
+        "description": "Self-hosted technical SEO for developers. Crawl, audit, integrate GSC/GA4, and fix with AI agents via 340 MCP tools. Open source. Your infrastructure, your data.",
+        "isPartOf": { "@id": "https://codefrydev.in/#website" },
+        "about": { "@id": "https://codefrydev.in/SEO#software" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://raw.githubusercontent.com/codefrydev/WebsiteProfiling/master/docs/assets/social-preview.png"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://codefrydev.in/SEO#software",
+        "name": "Site Audit",
+        "url": "https://codefrydev.in/SEO",
+        "description": "Self-hosted technical SEO crawl and audit platform for developers. Crawl sites, generate reports, integrate Google Search Console and GA4, and fix issues with AI agents via MCP.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cross-platform",
+        "softwareHelp": "https://github.com/codefrydev/WebsiteProfiling",
+        "downloadUrl": "https://github.com/codefrydev/WebsiteProfiling",
+        "codeRepository": "https://github.com/codefrydev/WebsiteProfiling",
+        "license": "https://opensource.org/licenses/MIT",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "codefrydev",
+          "url": "https://github.com/codefrydev"
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: rgba(255, 255, 255, 0.04);
+      --surface-muted: rgba(255, 255, 255, 0.07);
+      --text: #cbd5e1;
+      --heading: #f8fafc;
+      --subtle: #94a3b8;
+      --accent: #60a5fa;
+      --accent-hover: #93c5fd;
+      --accent-soft: rgba(96, 165, 250, 0.12);
+      --warm: #fb923c;
+      --success: #4ade80;
+      --dark: #030712;
+      --border: rgba(255, 255, 255, 0.1);
+      --shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+      --radius: 16px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(180deg, #030712 0%, #0f172a 55%, #1e293b 100%);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    /* Hero */
+    .hero {
+      color: #fff; padding: 80px 0 96px; overflow: hidden; position: relative;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(37,99,235,0.25), transparent 40%),
+                  radial-gradient(circle at 80% 10%, rgba(249,115,22,0.15), transparent 35%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
+      position: relative;
+    }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 600;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+      color: #e2e8f0;
+    }
+    .badge.green { color: #86efac; border-color: rgba(34,197,94,0.35); background: rgba(34,197,94,0.12); }
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.08;
+      letter-spacing: -0.03em; margin-bottom: 18px; color: var(--heading);
+    }
+    .hero p.lead {
+      font-size: 1.15rem; color: #cbd5e1; max-width: 560px; margin-bottom: 28px;
+    }
+    .hero-cta {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 28px; font-size: 0.875rem;
+    }
+    .hero-cta a { color: #cbd5e1; font-weight: 500; }
+    .hero-cta a:hover { color: #fff; }
+    .hero-cta .sep { color: #475569; user-select: none; }
+    .hero-stats {
+      display: flex; flex-wrap: wrap; gap: 24px; color: #94a3b8; font-size: 0.9rem;
+    }
+    .hero-stats strong { display: block; color: #fff; font-size: 1.1rem; }
+    .hero-shot {
+      border-radius: var(--radius); overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+    }
+    .hero-shot img { width: 100%; display: block; }
+
+    /* Sections */
+    section { padding: 88px 0; }
+    .section-head { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--heading);
+      letter-spacing: -0.02em; margin-bottom: 12px;
+    }
+    .section-head p { color: var(--subtle); font-size: 1.05rem; }
+
+    /* Video */
+    .video-wrap {
+      max-width: 920px; margin: 0 auto; border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); border: 1px solid var(--border); background: #000;
+      aspect-ratio: 16 / 9;
+    }
+    .video-wrap iframe { width: 100%; height: 100%; border: 0; }
+
+    /* Features */
+    .features {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    }
+    .feature {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px 22px; text-align: center;
+    }
+    .feature img { width: 48px; height: 48px; margin-bottom: 14px; }
+    .feature h3 { color: var(--heading); font-size: 1rem; margin-bottom: 8px; }
+    .feature p { color: var(--subtle); font-size: 0.9rem; }
+
+    /* Loop */
+    .loop {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .loop-steps {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+      margin-bottom: 32px; font-weight: 700; color: var(--heading);
+    }
+    .loop-steps span {
+      background: var(--accent-soft); color: var(--accent);
+      padding: 8px 14px; border-radius: 999px; font-size: 0.9rem;
+    }
+    .loop img {
+      width: 100%; max-width: 920px; display: block; margin: 0 auto;
+      border-radius: var(--radius); border: 1px solid var(--border);
+    }
+
+    /* Highlights */
+    .highlights {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .highlight {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+    }
+    .highlight h3 { color: var(--heading); margin-bottom: 10px; font-size: 1.05rem; }
+    .highlight p { color: var(--subtle); font-size: 0.95rem; }
+    .highlight .tag {
+      display: inline-block; margin-top: 14px; font-size: 0.78rem; font-weight: 700;
+      color: var(--warm); background: rgba(249,115,22,0.1); padding: 4px 10px; border-radius: 999px;
+    }
+
+    /* Stack */
+    .stack {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+    }
+    .stack span {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 10px 16px; border-radius: 10px; font-weight: 600; color: var(--heading);
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 0 48px; text-align: center; color: var(--subtle); font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+    footer strong { color: var(--heading); }
+
+    @media (max-width: 960px) {
+      .hero-grid, .features, .highlights { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge-row">
+          <span class="badge green">Open Source · MIT</span>
+          <span class="badge">Self-hosted</span>
+          <span class="badge">340 MCP tools</span>
+        </div>
+        <h1>Developer-friendly SEO crawl &amp; audit</h1>
+        <p class="lead">
+          Self-hosted technical SEO for engineers — crawl your site, generate actionable reports,
+          connect Search Console &amp; GA4, and fix issues in your IDE with AI agents. Your infrastructure. Your data.
+        </p>
+        <div class="hero-cta">
+          <a href="https://github.com/codefrydev/WebsiteProfiling" target="_blank" rel="noopener">GitHub</a>
+          <span class="sep" aria-hidden="true">·</span>
+          <a href="#demo">Demo</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>Next.js + Python</strong>Modern full stack</div>
+          <div><strong>PostgreSQL</strong>Persistent audit data</div>
+          <div><strong>Docker ready</strong>Deploy in minutes</div>
+        </div>
+      </div>
+      <div class="hero-shot">
+        <img src="https://raw.githubusercontent.com/codefrydev/WebsiteProfiling/master/docs/assets/social-preview.png" alt="Site Audit dashboard preview">
+      </div>
+    </div>
+  </header>
+
+  <section id="demo">
+    <div class="container">
+      <div class="section-head">
+        <h2>See Site Audit in action</h2>
+        <p>Walkthrough of the open-source SEO crawl and audit platform — from crawl to report to MCP-powered fixes.</p>
+      </div>
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/HwWw7_koj70"
+          title="Site Audit — Open Source SEO Crawl & Audit"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <div class="section-head">
+        <h2>Built for technical SEO teams</h2>
+        <p>Transparent audits without subscription tiers, gated exports, or opaque SaaS dashboards.</p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <img src="https://raw.githubusercontent.com/codefrydev/WebsiteProfiling/master/docs/assets/icon-crawl.svg" alt="">
+          <h3>Site crawl</h3>
+          <p>Static &amp; JavaScript rendering, sitemap export, crawl maps.</p>
+        </div>
+        <div class="feature">
+          <img src="https://raw.githubusercontent.com/codefrydev/WebsiteProfiling/master/docs/assets/icon-audit.svg" alt="">
+          <h3>Technical audit</h3>
+          <p>Issues, Lighthouse, accessibility (axe), on-page checks.</p>
+        </div>
+        <div class="feature">
+          <img src="https://raw.githubusercontent.com/codefrydev/WebsiteProfiling/master/docs/assets/icon-integrations.svg" alt="">
+          <h3>Integrations</h3>
+          <p>Google Search Console, GA4, and Bing Webmaster.</p>
+        </div>
+        <div class="feature">
+          <img src="https://raw.githubusercontent.com/codefrydev/WebsiteProfiling/master/docs/assets/icon-self-hosted.svg" alt="">
+          <h3>Self-hosted</h3>
+          <p>Docker or local dev — your data stays yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="loop" id="loop">
+    <div class="container">
+      <div class="section-head">
+        <h2>The SEO feedback loop</h2>
+        <p>Not a one-off dashboard check — a continuous improve-and-verify cycle for engineering teams.</p>
+      </div>
+      <div class="loop-steps">
+        <span>Audit</span><span>→</span><span>Report</span><span>→</span>
+        <span>MCP</span><span>→</span><span>Fix</span><span>→</span><span>Review</span>
+      </div>
+      <img src="https://raw.githubusercontent.com/codefrydev/WebsiteProfiling/master/docs/assets/seo-feedback-loop.png" alt="SEO feedback loop diagram">
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>More than a crawler</h2>
+        <p>Everything you need for developer-first SEO workflows.</p>
+      </div>
+      <div class="highlights">
+        <div class="highlight">
+          <h3>340 MCP tools for IDE agents</h3>
+          <p>Expose audit data to Cursor, Claude Code, or Copilot. Pull issue diffs, compare runs, and fix in your repo.</p>
+          <span class="tag">Agent-ready</span>
+        </div>
+        <div class="highlight">
+          <h3>Content studio with live scoring</h3>
+          <p>Write and optimize content with live SEO scoring from Search Console and on-page heuristics.</p>
+          <span class="tag">Content</span>
+        </div>
+        <div class="highlight">
+          <h3>Agency portfolio &amp; compare runs</h3>
+          <p>Manage client properties, compare audit runs, and prove improvement with category deltas.</p>
+          <span class="tag">Agencies</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Modern stack, honest scope</h2>
+        <p>Open source you can inspect, extend, and run on your own infrastructure.</p>
+      </div>
+      <div class="stack">
+        <span>Next.js</span>
+        <span>Python</span>
+        <span>PostgreSQL</span>
+        <span>Docker</span>
+        <span>Lighthouse</span>
+        <span>Playwright</span>
+        <span>MCP</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>
+        <strong>Site Audit</strong> · Open source SEO crawl &amp; audit ·
+        <a href="https://github.com/codefrydev/WebsiteProfiling">GitHub</a> ·
+        <a href="https://youtu.be/HwWw7_koj70">Demo video</a>
+      </p>
+      <p style="margin-top:8px;">© 2026 <a href="https://github.com/codefrydev">codefrydev</a> · MIT License</p>
+    </div>
+  </footer>
+
+</body>
+</html>
